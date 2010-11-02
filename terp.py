@@ -43,6 +43,7 @@ parser.add_option("-u","--uid",dest="uid",help="user ID",metavar="UID",type="int
 parser.add_option("-p","--passwd",dest="passwd",help="user password",metavar="PASSWD",default="admin")
 parser.add_option("--pref",action="store_true",dest="user_pref",help="edit user preferences",default=False)
 parser.add_option("--debug",action="store_true",dest="debug",help="debug mode",default=False)
+parser.add_option("-l","--log-file",dest="logfile",help="Specify the log filename",default="/tmp/terp.log")
 (opts,args)=parser.parse_args()
 
 if opts.debug:
@@ -64,7 +65,7 @@ passwd=opts.passwd
 
 screen=None
 root_panel=None
-log_file=file("/tmp/terp.log","a")
+log_file=file(opts.logfile,"a")
 dbg_mode=0
 
 color_pairs={
