@@ -56,7 +56,9 @@ rpc_wiz=xmlrpclib.ServerProxy("http://%s:%d/xmlrpc/wizard"%(opts.host,opts.port)
 
 dbname=opts.dbname
 if not dbname:
-    raise Exception("Missing dbname")
+    print 'Database name must be define'
+    sys.exit(1)
+
 uid=opts.uid
 passwd=opts.passwd
 
